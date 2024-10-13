@@ -1,5 +1,5 @@
 {
-  "name": "@ivanli-cn/kutt-to-snapp",
+  "name": "kutt-to-snapp",
   "version": "0.0.1",
   "description": "Migrate short URLs from kutt to snapp",
   "main": "index.mjs",
