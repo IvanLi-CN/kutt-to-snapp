@@ -1,0 +1,22 @@
+{
+  "name": "@ivanli-cn/kutt-to-snapp",
+  "version": "0.0.1",
+  "description": "Migrate short URLs from kutt to snapp",
+  "main": "index.mjs",
+  "bin": {
+    "kutt-to-snapp": "./index.mjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "kutt",
+    "snapp",
+    "migration"
+  ],
+  "author": "Ivan Li",
+  "license": "MIT",
+  "dependencies": {
+    "csv-stringify": "^6.5.1"
+  }
+}
