@@ -5,9 +5,12 @@
   "main": "index.mjs",
   "type": "module",
   "private": false,
-  "repository": "https://github.com/ivanli-cn/kutt-to-snapp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanli-cn/kutt-to-snapp.git"
+  },
   "bin": {
-    "kutt-to-snapp": "./index.mjs"
+    "kutt-to-snapp": "index.mjs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
