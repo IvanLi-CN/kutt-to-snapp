@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Migrate short URLs from kutt to snapp",
   "main": "index.mjs",
+  "type": "module",
+  "private": false,
+  "repository": "https://github.com/ivanli-cn/kutt-to-snapp",
   "bin": {
     "kutt-to-snapp": "./index.mjs"
   },
@@ -14,7 +17,11 @@
     "snapp",
     "migration"
   ],
-  "author": "Ivan Li",
+  "author": {
+    "name": "Ivan Li",
+    "email": "ivanli2048@gmail.com",
+    "url": "https://ivanli.cc"
+  },
   "license": "MIT",
   "dependencies": {
     "csv-stringify": "^6.5.1"
