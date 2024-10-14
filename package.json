@@ -1,6 +1,6 @@
 {
   "name": "kutt-to-snapp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Migrate short URLs from kutt to snapp",
   "main": "index.mjs",
   "type": "module",
