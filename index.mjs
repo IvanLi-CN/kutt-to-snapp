@@ -15,9 +15,9 @@ You can set KUTT_URL and KUTT_TOKEN in your environment.
 And you can set MIGRATE_ALL=true to migrate all short URLs (ADMIN only).
 
 Example:
-KUTT_URL=https://kutt.it \
-KUTT_TOKEN=your-kutt-token \
-MIGRATE_ALL=true \
+KUTT_URL=https://kutt.it \\
+KUTT_TOKEN=your-kutt-token \\
+MIGRATE_ALL=true \\
 npx kutt-to-snapp > kutt.csv
 
 
@@ -33,7 +33,7 @@ if (await fetch(`${kuttUrl}/api/v2/health`).then(res => res.ok)) {
 }
 
 const stringifier = stringify({
-  columns: ['shortcode', 'original_url', 'secret', 'max_usages', 'notes', 'expiration', 'disabled', 'hit'],
+  columns: ['shortcode', 'original_url', 'secret', 'max_usages', 'notes', 'expiration', 'disabled', 'hit', 'created'],
   delimiter: ',',
   header: true,
 })
@@ -57,18 +57,6 @@ while (true) {
 
   for (const [idx, item] of data.entries()) {
     const {
-      // "id": "37453692-491c-4d9e-b83e-9ee79f4d1e21",
-      // "address": "deploy-unworld-game-server",
-      // "banned": false,
-      // "created_at": "2024-05-10T08:11:02.861Z",
-      // "updated_at": "2024-05-10T08:21:21.037Z",
-      // "password": false,
-      // "description": null,
-      // "expire_in": null,
-      // "target": "https://webdav-syncthing.ivanli.cc/Sequenxe/UnWorld/Scripts/deploy-game-server.sh",
-      // "visit_count": 0,
-      // "domain": null,
-      // "link": "https://t.ivanli.cc/deploy-unworld-game-server"
       id,
       address,
       banned,
@@ -92,6 +80,7 @@ while (true) {
       "expiration": expire_in,
       "disabled": banned,
       "hit": visit_count,
+      "created": created_at,
     };
 
     stringifier.write([
@@ -102,7 +91,8 @@ while (true) {
       snapp.notes,
       snapp.expiration,
       snapp.disabled,
-      snapp.hit
+      snapp.hit,
+      snapp.created
     ]);
 
     process.stderr.write(`\r${offset + idx + 1} / ${offset + data.length}`);
